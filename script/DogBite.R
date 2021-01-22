@@ -122,7 +122,7 @@ Am_pb_tr_bites <- Dog_Bites %>%
          |Breed == 'Staffordshire Bull Terrier')
 
 percentage_bites_pb <- Am_pb_tr_bites %>%
-  mutate(percentage = count(Am_pb_tr_bites)/10030) %>%
+  mutate(percentage = count(Am_pb_tr_bites)/10044) %>%
   mutate(percentage_2 = percentage * 100)
+dim(Dog_Bites) #10044 observations
 
-apply(Dog_Bites, 2, function(x) which(x == "11377"))
