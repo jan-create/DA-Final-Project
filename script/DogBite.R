@@ -11,7 +11,7 @@ Dog_Bites <- Dog_Bites %>%
     `Date` = `DateOfBite`,
     `Zipcode` = `ZipCode`,
   )
-#str_to_title(Dog_Bites$Breed) doesn't work?????
+
 #remove columns not planning to use
 Dog_Bites <- select(Dog_Bites, -1, -3)
 
@@ -52,19 +52,11 @@ Dog_Bites[Dog_Bites == "2018-02-03T00:00:00.000"|
             Dog_Bites == "1/12M" |
             Dog_Bites == "10 & 9"] <- "NA"
 
-
-
-
-
-
-
-
-
 Dog_Bites$Age <- as.double(Dog_Bites$Age)
 glimpse(Dog_Bites)
 
-
 Dog_Bites$Age
+
 Dog_Bites$Breed
 #Dog_Bites[Dog_Bites == "Crossbreed"] <- "Mix"
 Dog_Bites[Dog_Bites == "American Pit Bull Terrier/Pit Bull" | 
