@@ -1,5 +1,6 @@
 library(tidyverse)
 library(readr)
+library(stringr)
 Dog_Bites <- read_csv("~/Desktop/DA Final Project/data/DOHMH_Dog_Bite_Data-2.csv")
 #simplify column names
 Dog_Bites <- Dog_Bites %>% 
@@ -9,7 +10,8 @@ Dog_Bites <- Dog_Bites %>%
     `Zipcode` = `ZipCode`,
   )
 
-
+#change dog names from UPPERCASE to Title Case
+Dog_Bites$Breed<- str_to_title(Dog_Bites$Breed)
 #####AGE#####
 #change <1 year to decimal points
 #Over and equal to 1 year
@@ -42,88 +44,103 @@ Dog_Bites$Age <- as.double(Dog_Bites$Age)
 glimpse(Dog_Bites)
 
 #####Cleaning Up Dog Breed Data#####
-Dog_Bites$Breed
-#Dog_Bites[Dog_Bites == "Crossbreed"] <- "Mix"
+#Pitbull
 Dog_Bites[Dog_Bites == "American Pit Bull Terrier/Pit Bull" | 
             Dog_Bites == "Pit Bull" | 
             Dog_Bites == "Blue Nosed Pit Bull"|
-            Dog_Bites == "BLUE NOSED PIT BULL"|
-            Dog_Bites == "RED-NOSE PIT BULL"] <- "American Pitbull Terrier"
+            Dog_Bites == "Red-Nose Pit Bull"] <- "American Pitbull Terrier"
+#Pitbull Mix
 Dog_Bites[Dog_Bites == "American Pit Bull Mix / Pit Bull Mix" | 
             Dog_Bites == "Pit Bull Mixed" |
-            Dog_Bites == "PIT BULL/GOLDEN RETRIVE X"|
-            Dog_Bites == "PIT BULL MIXED"|
+            Dog_Bites == "Pit Bull/Golden Retrive X"|
+            Dog_Bites == "Pit Bull Mixed"|
             Dog_Bites == "STAFFORDSHIRE TERRIER/PITBULL MIX"|
             Dog_Bites == "PITBULL/ROTTWEILER"|
-            Dog_Bites == "LABRADOR RETR/PIT BULL X"] <- "American Pitbull Terrier Mix"
+            Dog_Bites == "LABRADOR RETR/PIT BULL X"|
+            Dog_Bites == "PITBULL/LAB RETRIEVER"|
+            Dog_Bites == "PIT BULL MIX"] <- "American Pitbull Terrier Mix"
+#Poodle
 Dog_Bites[Dog_Bites == "Poodle, Standard" | 
             Dog_Bites == "Poodle, Miniature" |
-            Dog_Bites == "Poodle, Toy" |
-            Dog_Bites == "POODLE"] <- "Poodle"
-Dog_Bites[Dog_Bites == "HUSKY"] <- "Husky"
-Dog_Bites[Dog_Bites == "MORKIE"] <- "Morkie"
+            Dog_Bites == "Poodle, Toy"] <- "Poodle"
+
+#Unknown/Unclear
 Dog_Bites[Dog_Bites == "Mixed/Other"|
-            Dog_Bites == "MIXED"|
-            Dog_Bites == "MUTT" ] <- "NA"
+            Dog_Bites == "Mix"|
+            Dog_Bites == "Mutt" | 
+            Dog_Bites == "SHEPARD X"|
+            Dog_Bites == "2 Dogs: Terr X & Doberman"] <- "NA"
+
 Dog_Bites[Dog_Bites == "Jindo Dog,"] <- "Korean Jindo"
+
+#Jack Russ
 Dog_Bites[Dog_Bites == "Jack Russ"] <- "Jack Russell Terrier"
+Dog_Bites[Dog_Bites == "JACK RUSS TERR X- CHIHUAHUA"|
+            Dog_Bites == "JACK RUSSELL/CHIHUAHUA X" |
+            Dog_Bites == "Jack Russell X"|
+            Dog_Bites == "BORDER COLLIE/JACK RUSSELL"|
+            Dog_Bites == "Beagle/Jack Russell"| 
+            Dog_Bites == "Beagle/Jack Russ"|
+            Dog_Bites == "Beagle/Jack Russell X"|
+            Dog_Bites == "Jack Russ Mix"] <- "Jack Russell Terrier Mix"  
+#Beagle
 Dog_Bites[Dog_Bites == "Beagle Crossbreed"] <- "Beagle Mix"
-Dog_Bites[Dog_Bites == "COCKER/CORGI X"] <- "Corgi Mix"
+Dog_Bites[Dog_Bites == "Cocker/Corgi X"] <- "Corgi Mix"
 Dog_Bites[Dog_Bites == "Bull Dog, English"] <- "English Bulldog"
 Dog_Bites[Dog_Bites == "Mastiff, Bull"] <- "Bull Mastiff"
 Dog_Bites[Dog_Bites == "Mastiff, Tibetan"] <- "Tibetan Mastiff"
 Dog_Bites[Dog_Bites == "Mastiff, Old English"] <- "Old English Mastiff"
 Dog_Bites[Dog_Bites == "TERRIER/ROTTWEILER X"] <- "Rottweiler Mix" 
-Dog_Bites[Dog_Bites == "JACK RUSS TERR X- CHIHUAHUA"] <- "Jack Russell Terrier Mix"        
-Dog_Bites[Dog_Bites == "DOGO ARGENTINO X" ] <- "Dogo Argentino Mix"  
+      
+Dog_Bites[Dog_Bites == "Dogo Argentino X" ] <- "Dogo Argentino Mix"  
 Dog_Bites[Dog_Bites == "Pointer, German Shorthaired"] <- "German Shorthaired Pointer"
 Dog_Bites[Dog_Bites == "CORGI"] <- "Corgi" 
-Dog_Bites[Dog_Bites == "SHIH TZU X"|Dog_Bites=="SHIH TZU/MALTESE X" ] <- "Shih Tzu Mix"
-Dog_Bites[Dog_Bites == "Pharoh Hound"|
-            Dog_Bites == "Pharoh hound" ] <- "Pharoah Hound"  
-Dog_Bites[Dog_Bites == "SHEPARD X"] <- "NA"
+Dog_Bites[Dog_Bites == "Shih Tzu X"|Dog_Bites=="Shih Tzu/Maltese X"|Dog_Bites=="/Shih Tzu Mix"] <- "Shih Tzu Mix"
+Dog_Bites[Dog_Bites == "Pharoh Hound"|Dog_Bites == "Pharoh hound" ] <- "Pharoah Hound"  
+
 Dog_Bites[Dog_Bites == "Dachshund Smooth Coat" | 
             Dog_Bites =="Dachshund Smooth Coat Minature" |
             Dog_Bites =="Dachshund, Long Haired"|
             Dog_Bites =="Dachshund Smooth Coat Miniature"] <- "Dachshund"
 Dog_Bites[Dog_Bites == "Chihuahua Crossbreed"] <- "Chihuahua Mix"
-Dog_Bites[Dog_Bites == "German Shepherd Crossbreed"] <- "German Shepherd Mix"
+Dog_Bites[Dog_Bites == "German Shepherd Crossbreed"|
+            Dog_Bites == "BELIGUM/GERMAN SHEP X" ] <- "German Shepherd Mix"
 Dog_Bites[Dog_Bites == "Cocker Spaniel Crossbreed" ] <- "Cocker Spaniel Mix"
 Dog_Bites[Dog_Bites == "BULL DOG X"] <- "Bulldog Mix"
 Dog_Bites[Dog_Bites == "Bull Dog, French"] <- "French Bulldog"
 Dog_Bites[Dog_Bites == "BLUE HEELER X"|Dog_Bites == "AUSTRALIAN CATTLE BLUE HEELER X"] <- "Blue Heeler Mix"
-Dog_Bites[Dog_Bites == "RAT TERRIER"] <- "Rat Terrier"
 Dog_Bites[Dog_Bites == "Yorkshire Terrier Crossbreed"] <- "Yorkshire Terrier Mix"
 Dog_Bites[Dog_Bites == "Collie, Border"] <- "Border Collie"
 Dog_Bites[Dog_Bites == "Labrador Retriever Crossbreed"|Dog_Bites == "LAB/COLLIE X"|Dog_Bites == "AMER STAFF/LAB X"|Dog_Bites == "BEAGLE/LAB X"] <- "Lab Mix"
-"LHASA APSO/MALTESE" 
-"MALTESE X"   
-"MASTIFF"  
-"Schnauzer, Standard"  
-"SHEPHERD MIX"
-"JACK RUSSELL/CHIHUAHUA X"  
-"SHILOH SHEPHERD"
+Dog_Bites[Dog_Bites == "LHASA APSO/MALTESE"|Dog_Bites=="MALTESE X"]<-"Maltese Mix"  
+Dog_Bites[Dog_Bites == "Schnauzer, Standard"] <- "Standard Schnauzer"  
+Dog_Bites[Dog_Bites == "Bull Dog"] <- "Bulldog"
+Dog_Bites[Dog_Bites == "Fox Hound"] <- "Foxhound"
+Dog_Bites[Dog_Bites == "HARRIER/BEAGLE"] <- "Beagle Mix"
+Dog_Bites[Dog_Bites == "Harrier/Germ Shep"] <- "German Shepherd Mix"
+Dog_Bites[Dog_Bites == "BOXER X W/ PIT BULL"|
+            Dog_Bites == "BOXER/RHODESIAN RIDGEBACK X"|
+            Dog_Bites == "BOXER/HOUND/PITBULL"] <- "Boxer Mix"
+Dog_Bites[Dog_Bites == "CATAHOULA LEOPARD DOG"] <- "Catahoula Leaoard Hound"
 
-"BELIGUM/GERMAN SHEP X"              
-  
-"Bull dog" 
+#AUSTRALIAN CATTLE
+#ITALIAN MASTIFF
+#BEAGLE/JACK RUSS
+#PARSON RUSSELLTERR
+#UNKNOWN
+#POINTER/BEAGLE
+#GERMAN SHEPHERD/RIDGEBACK
+#STAFFORDSHIRE TERR
+#2 Dogs: Terr X & Doberman
+#CHIHUAHUA/BOSTON TERR
+#HUSKY/CATTLE DOG MIX
+#HUSKY/CATTLE MIX
+#BORDER COLLIE/JACK RUSSELL
+#Chow Chow/Shepard X
+#	Alaskan Husky/Labrador Retr
+Dog_Bites[Dog_Bites == "American Bull Dog"] <- "American Bulldog"
 
-"BELGIAN SHEPHERD" 
-"JACK RUSSELL X" 
-"PERSA CANARIO"  
-#####HOW MANY DOG BITES ARE BY DOGS DEEMED "PITBULLS"#####
-Am_pb_tr_bites <- Dog_Bites %>%
-  filter(Breed == 'American Pitbull Terrier'
-         |Breed == 'American Pitbull Terrier Mix'
-         |Breed == 'American Bully'
-         |Breed == 'American Staffordshire Terrier'
-         |Breed == 'American Staffordshire Terrier Mix'
-         |Breed == 'Dogo Argentino'
-         |Breed == 'Staffordshire Bull Terrier')
-"Dogo Argentino Mix"
-
-
-dim(Dog_Bites) #10044 observations
+#Write to CSV
 write.csv(Dog_Bites,'bites.csv', 
           row.names = TRUE,
           quote = FALSE)
