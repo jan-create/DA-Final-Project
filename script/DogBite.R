@@ -50,6 +50,12 @@ Dog_Bites$Age <- as.double(Dog_Bites$Age)
 glimpse(Dog_Bites)
 
 #####Cleaning Up Dog Breed Data#####
+#Akita
+Dog_Bites[Dog_Bites == "Akita Crossbreed"|
+            Dog_Bites == "Akita/Chow Chow"|
+            Dog_Bites == "Chow Chow/Akita X"] <- "Akita Mix"
+
+Dog_Bites[Dog_Bites == "Cotton De Tulear"] <- "Coton De Tulear"
 #Pitbull
 Dog_Bites[Dog_Bites == "American Pit Bull Terrier/Pit Bull" | 
             Dog_Bites == "Pit Bull" | 
@@ -67,17 +73,40 @@ Dog_Bites[Dog_Bites == "American Pit Bull Mix / Pit Bull Mix" |
             Dog_Bites == "PITBULL/LAB RETRIEVER"|
             Dog_Bites == "PIT BULL MIX"|
             Dog_Bites == "Pit Bull/LAB X"|
-            Dog_Bites == "Pit Bull Mix"] <- "American Pitbull Terrier Mix"
-
+            Dog_Bites == "Pit Bull/Labrador Mix"|
+            Dog_Bites == "Pit Bull Mix"|
+            Dog_Bites == "Pit Bull / Staffordshire"|
+            Dog_Bites == "American Pit Ter/Labrador Retr"|
+            Dog_Bites == "American Pit Bull/Labrador"] <- "American Pitbull Terrier Mix"
 #Staffy
 Dog_Bites[Dog_Bites == "STAFFORDSHIRE TERRIER/PITBULL MIX"|
-            Dog_Bites == "AMER STAFF/LAB X"] <- "American Staffordshire Terrier Mix"
+            Dog_Bites == "AMER STAFF/LAB X"|
+            Dog_Bites == "Amer Staff/Am Pit Bull Terr"|
+            Dog_Bites == "Amer Staff/Lab X"|
+            Dog_Bites == "Amer Staffordshire X"|
+            Dog_Bites == "American Bull / Stafford Terrier"|
+            Dog_Bites == "American Staff Mix"|
+            Dog_Bites == "American Staff/Akita"|
+            Dog_Bites == "American Staff Ter X"|
+            Dog_Bites == "American Stafford And Labrador Mix"|
+            Dog_Bites == "American Stafford Mix"|
+            Dog_Bites == "American Staffordshire / Pit Bull"|
+            Dog_Bites == "American Staffordshire / Pit Bull Mix"|
+            Dog_Bites == "American Staffordshire Terrier / Pit Bull"|
+            Dog_Bites == "American Staffordshire X"]<- "American Staffordshire Terrier Mix"
+Dog_Bites[Dog_Bites == "Staffordshire Terr"|
+            Dog_Bites == "Staffordshire Terrier"] <- "American Staffordshire Terrier"
 
+Dog_Bites[Dog_Bites == "Alaska Husky"|
+            Dog_Bites == "Alaskan Husky"] <- "Husky"
+Dog_Bites[Dog_Bites == "Alaskan Husky/Labrador Retr"|
+            Dog_Bites == "Alaskan Husky Mix"] <- "Husky Mix"
+
+Dog_Bites[Dog_Bites == "Alaskan Malmute"] <- "Alaskan Malamute"
 #Poodle
 Dog_Bites[Dog_Bites == "Poodle, Standard" | 
             Dog_Bites == "Poodle, Miniature" |
             Dog_Bites == "Poodle, Toy"] <- "Poodle"
-
 Dog_Bites[Dog_Bites == "Poodle X"] <- "Poodle Mix"
 
 #Unknown/Unclear = Unknown
@@ -88,10 +117,10 @@ Dog_Bites[Dog_Bites == "Mixed/Other"|
             Dog_Bites == "2 Dogs: Terr X & Doberman"|
             Dog_Bites == "NA"|
             Dog_Bites == "Mixed Breed"|
-            Dog_Bites == "Mixed"] <- "Unknown"
+            Dog_Bites == "Mixed"|
+            Dog_Bites == "Alpaca"] <- "Unknown"
 
 Dog_Bites[Dog_Bites == "Jindo Dog,"] <- "Korean Jindo"
-
 #Jack Russ
 Dog_Bites[Dog_Bites == "Jack Russ"] <- "Jack Russell Terrier"
 Dog_Bites[Dog_Bites == "JACK RUSS TERR X- CHIHUAHUA"|
@@ -104,6 +133,7 @@ Dog_Bites[Dog_Bites == "JACK RUSS TERR X- CHIHUAHUA"|
             Dog_Bites == "Jack Russ Mix"] <- "Jack Russell Terrier Mix"  
 #Beagle
 Dog_Bites[Dog_Bites == "Beagle Crossbreed"] <- "Beagle Mix"
+
 Dog_Bites[Dog_Bites == "Cocker/Corgi X"] <- "Corgi Mix"
 Dog_Bites[Dog_Bites == "Bull Dog, English"] <- "English Bulldog"
 Dog_Bites[Dog_Bites == "Mastiff, Bull"] <- "Bull Mastiff"
@@ -121,7 +151,7 @@ Dog_Bites[Dog_Bites == "Corgi / Beagle Mix"|Dog_Bites=="Corgi/Chihuahua X"|Dog_B
 
 
 Dog_Bites[Dog_Bites == "Shih Tzu X"|Dog_Bites=="Shih Tzu/Maltese X"|Dog_Bites=="/Shih Tzu Mix"] <- "Shih Tzu Mix"
-
+#Pharoah Hound
 Dog_Bites[Dog_Bites == "Pharoh Hound"|Dog_Bites == "Pharoh hound" ] <- "Pharoah Hound"  
 
 #Dachshund
@@ -145,7 +175,14 @@ Dog_Bites[Dog_Bites == "Bull Dog, French"] <- "French Bulldog"
 Dog_Bites[Dog_Bites == "BLUE HEELER X"|Dog_Bites == "AUSTRALIAN CATTLE BLUE HEELER X"] <- "Blue Heeler Mix"
 Dog_Bites[Dog_Bites == "Yorkshire Terrier Crossbreed"] <- "Yorkshire Terrier Mix"
 Dog_Bites[Dog_Bites == "Collie, Border"] <- "Border Collie"
-Dog_Bites[Dog_Bites == "Labrador Retriever Crossbreed"|Dog_Bites == "LAB/COLLIE X"|Dog_Bites == "LABRADOR RETR/PIT BULL X"|Dog_Bites == "Labrador Mix"] <- "Lab Mix"
+
+#####Lab#####
+Dog_Bites[Dog_Bites == "Labrador Retriever Crossbreed"|
+            Dog_Bites == "LAB/COLLIE X"|
+            Dog_Bites == "LABRADOR RETR/PIT BULL X"|
+            Dog_Bites == "Labrador Mix"|
+            Dog_Bites == "Labrador/Staffordshire"] <- "Lab Mix"
+
 Dog_Bites[Dog_Bites == "LHASA APSO/MALTESE"|Dog_Bites=="MALTESE X"]<-"Maltese Mix"  
 Dog_Bites[Dog_Bites == "Schnauzer, Standard"] <- "Standard Schnauzer"  
 Dog_Bites[Dog_Bites == "Bull Dog"] <- "Bulldog"
@@ -158,7 +195,10 @@ Dog_Bites[Dog_Bites == "BOXER X W/ PIT BULL"|
             Dog_Bites == "BOXER/RHODESIAN RIDGEBACK X"|
             Dog_Bites == "BOXER/HOUND/PITBULL"] <- "Boxer Mix"
 Dog_Bites[Dog_Bites == "CATAHOULA LEOPARD DOG"] <- "Catahoula Leaoard Hound"
+Dog_Bites[Dog_Bites == "American Bully (Pit Bull)"|
+            Dog_Bites == "American Bull"] <- "American Bully"
 #Cocker Spaniel / Poodle Mix
+#American Bulldog/Great Pyrenees
 #AUSTRALIAN CATTLE
 #BEAGLE/JACK RUSS
 #PARSON RUSSELLTERR
@@ -171,7 +211,9 @@ Dog_Bites[Dog_Bites == "CATAHOULA LEOPARD DOG"] <- "Catahoula Leaoard Hound"
 #HUSKY/CATTLE MIX
 #BORDER COLLIE/JACK RUSSELL
 #Chow Chow/Shepard X
-#	Alaskan Husky/Labrador Retr
+#Alaskan Husky/Labrador Retr
+#American Eskimo / Husky Mix
+#
 Dog_Bites[Dog_Bites == "American Bull Dog"] <- "American Bulldog"
 Dog_Bites[Dog_Bites == "Sheperd"] <- "Shepherd"
 #Welsh Corgi, Pembroke
