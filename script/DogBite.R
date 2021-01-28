@@ -50,7 +50,8 @@ Dog_Bites[Dog_Bites == "American Pit Bull Terrier/Pit Bull" |
             Dog_Bites == "Blue Nosed Pit Bull"|
             Dog_Bites == "Red-Nose Pit Bull"] <- "American Pitbull Terrier"
 #Pitbull Mix
-Dog_Bites[Dog_Bites == "American Pit Bull Mix / Pit Bull Mix" | 
+Dog_Bites[Dog_Bites == "American Pit Bull Mix / Pit Bull Mix" |
+            Dog_Bites == "American Pit Bull Mix/Pit Bull Mix" |
             Dog_Bites == "Pit Bull Mixed" |
             Dog_Bites == "Pit Bull/Golden Retrive X"|
             Dog_Bites == "Pit Bull Mixed"|
@@ -131,7 +132,6 @@ Dog_Bites[Dog_Bites == "CATAHOULA LEOPARD DOG"] <- "Catahoula Leaoard Hound"
 #POINTER/BEAGLE
 #GERMAN SHEPHERD/RIDGEBACK
 #STAFFORDSHIRE TERR
-#2 Dogs: Terr X & Doberman
 #CHIHUAHUA/BOSTON TERR
 #HUSKY/CATTLE DOG MIX
 #HUSKY/CATTLE MIX
@@ -139,6 +139,8 @@ Dog_Bites[Dog_Bites == "CATAHOULA LEOPARD DOG"] <- "Catahoula Leaoard Hound"
 #Chow Chow/Shepard X
 #	Alaskan Husky/Labrador Retr
 Dog_Bites[Dog_Bites == "American Bull Dog"] <- "American Bulldog"
+#Welsh Corgi, Pembroke
+#Boxer X W/ Pit Bull
 
 #Write to CSV
 write.csv(Dog_Bites,'bites.csv', 
