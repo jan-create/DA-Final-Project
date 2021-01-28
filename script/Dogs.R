@@ -1,7 +1,7 @@
 library(tidyverse)
 library(readr)
 #####MYC Dog Licensing Data Import#####
-NYC_Dogs <- read_csv("~/Desktop/DA Final Project/data/NYC_Dog_Licensing_Dataset-2.csv")
+NYC_Dogs <- read_csv("~/Desktop/DA Final Project/data/nycdogdata2.csv")
 
 glimpse(NYC_Dogs)
 #simplify column names
@@ -17,7 +17,7 @@ NYC_Dogs <- NYC_Dogs %>%
   )
 glimpse(NYC_Dogs)
 #remove columns not planning to use
-NYC_Dogs = select(NYC_Dogs, -1, -6, -10)
+NYC_Dogs = select(NYC_Dogs, -1)
 NYC_Dogs <- distinct(NYC_Dogs) #removes duplicate rows, some dogs entered multiple times and have multiple licenses issued
 
 #Add an age column (Age in Years)
@@ -53,7 +53,9 @@ NYC_Dogs[NYC_Dogs == "0HSO" |
 NYC_Dogs[NYC_Dogs == "A."] <- "A"
 NYC_Dogs[NYC_Dogs == "AJ"|
            NYC_Dogs == "A.J"] <- "A.J."
-str_to_title(NYC_Dogs$Name)
+
+NYC_Dogs$Name <-str_to_title(NYC_Dogs$Name)
+
 glimpse(NYC_Dogs)
 #####NYC DOG BREEDS#####
 NYC_Dogs$Breed
@@ -79,8 +81,9 @@ NYC_Dogs[NYC_Dogs == "Poodle, Standard" |
            NYC_Dogs == "Poodle, Miniature" | 
            NYC_Dogs =="Poodle, Toy"] <- "Poodle"
 NYC_Dogs[NYC_Dogs == "Collie, Border"] <- "Border Collie"
-NYC_Dogs[NYC_Dogs == "Welsh Corgi, Pembroke" |
-           NYC_Dogs == "Welsh Corgi, Cardigan" ] <- "Corgi" 
+NYC_Dogs[NYC_Dogs == "Welsh Corgi, Pembroke"|
+           NYC_Dogs == "Welsh Corgi, Cardigan"|
+           NYC_Dogs == "Pembroke Welsh Corgi"] <- "Corgi" 
 NYC_Dogs[NYC_Dogs == "German Shepherd dog" |
            NYC_Dogs == "German Shepherd Dog"] <- "German Shepherd"
 NYC_Dogs[NYC_Dogs == "Beagle Crossbreed"] <- "Beagle"
@@ -92,31 +95,17 @@ NYC_Dogs[NYC_Dogs == "Mastiff, Old English"] <- "Old English Mastiff"
 NYC_Dogs[NYC_Dogs == "Mastiff, Bull"] <- "Bull Mastiff"  
 NYC_Dogs[NYC_Dogs == "Shar-Pei, Chinese"] <- "Chinese Shar-Pei"  
 NYC_Dogs[NYC_Dogs == "Schnauzer, Standard"] <- "Standard Schnauzer"
-NYC_Dogs[NYC_Dogs == "Jack Russell Terrier Crossbreed"] <- "Jack Russell Mix" 
-#	Terrier Crossbreed
-#Collie Crossbreed
-#Yorkshire Terrier Crossbreed
-#Chihuahua Crossbreed
-
-#####How many dogs are "Pitbulls"?#####
-#6.26% of dogs registered in NYC are "Pitbulls"
-
-Am_pb_tr <- NYC_Dogs %>%
-  filter(Breed == 'American Pitbull Terrier'
-         |Breed == 'American Pitbull Terrier Mix'
-         |Breed == 'American Bully'
-         |Breed == 'American Staffordshire Terrier'
-         |Breed == 'American Staffordshire Terrier Mix'
-         |Breed == 'Dogo Argentino'
-         |Breed == 'Staffordshire Bull Terrier')
-
-percentage_pb <- Am_pb_tr %>%
-  summarize(percentage = count(Am_pb_tr)/count(NYC_Dogs)) %>%
-  mutate(total_pb = percentage * 100)
-
+NYC_Dogs[NYC_Dogs == "Jack Russell Terrier Crossbreed"] <- "Jack Russell Mix"
+#----------------------------------------------------------------------------
+NYC_Dogs[NYC_Dogs == "Pharoh Hound"] <- "Pharoah Hound"
+NYC_Dogs[NYC_Dogs == "Australian Cattledog"] <- "Australian Cattle Dog"
+NYC_Dogs[NYC_Dogs == "Basset Hound"] <- "Bassett Hound"
+NYC_Dogs[NYC_Dogs == "Bull Dog"] <- "Bulldog"
+NYC_Dogs[NYC_Dogs == "Terrier mix"] <- "Terrier Mix"
+NYC_Dogs[NYC_Dogs == "Cotton de Tulear"] <- "Coton de Tulear"
 #####Write CSV File#####
-write.csv(NYC_Dogs,'nycdogdata.csv', 
+write.csv(NYC_Dogs,'nycdogdata3.csv', 
           row.names = TRUE,
           quote = FALSE)
-nycdogdata <- read_csv("data/nycdogdata.csv")
+nycdogdata <- read_csv("data/nycdogdata3.csv")
 
