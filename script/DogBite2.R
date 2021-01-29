@@ -48,18 +48,15 @@ Dog_Bites[Dog_Bites == "8MTHS"| Dog_Bites == "8M"| Dog_Bites == "8 MTHS"|Dog_Bit
 Dog_Bites[Dog_Bites == "10MTHS"| Dog_Bites == "10M"| Dog_Bites == "10 MTHS"|Dog_Bites =="10 M"|Dog_Bites == "10 MTHS &"] <- "0.833"
 Dog_Bites[Dog_Bites == "11MTHS"| Dog_Bites == "11M"| Dog_Bites == "11 MTHS"|Dog_Bites =="11 M"|Dog_Bites == "11m"] <- "0.917"
 Dog_Bites[Dog_Bites == "2018-02-03T00:00:00.000"] <- "NA"
-
+#Change Age to number
 Dog_Bites$Age <- as.double(Dog_Bites$Age)
-
-
-glimpse(Dog_Bites)
 
 #####Cleaning Up Dog Breed Data#####
 #Akita
 Dog_Bites[Dog_Bites == "Akita Crossbreed"|
             Dog_Bites == "Akita/Chow Chow"|
             Dog_Bites == "Chow Chow/Akita X"] <- "Akita Mix"
-
+#-----------------------------------------------------------
 Dog_Bites[Dog_Bites == "Cotton De Tulear"] <- "Coton De Tulear"
 #Pitbull
 Dog_Bites[Dog_Bites == "American Pit Bull Terrier/Pit Bull" | 
@@ -198,14 +195,18 @@ Dog_Bites[Dog_Bites == "Bull Dog"] <- "Bulldog"
 
 Dog_Bites[Dog_Bites == "BLUE HEELER X"|Dog_Bites == "AUSTRALIAN CATTLE BLUE HEELER X"] <- "Blue Heeler Mix"
 #####Yorky#####
-Dog_Bites[Dog_Bites == "Yorkie"] <- "Yorkshire Terrier"
+Dog_Bites[Dog_Bites == "Yorkie"|
+            Dog_Bites == "Teacup Yorkshire"] <- "Yorkshire Terrier"
 
 Dog_Bites[Dog_Bites == "Yorkshire Terrier Crossbreed"|
             Dog_Bites == "Yorkshire/Shih Tzu Mix"|
             Dog_Bites == "Yorkshire/ Tibetan Terrier"|
             Dog_Bites == "Yorkshire Ter/Shihtzu"|
             Dog_Bites == "Yorkshire / Shih Tzu Mix"|
-            Dog_Bites == "Yorkshire / Jack Russ"] <- "Yorkshire Terrier Mix"
+            Dog_Bites == "Yorkshire / Jack Russ"|
+            Dog_Bites == "Yorkie/Bichon"|
+            Dog_Bites == "Yorkie Mix"|
+            Dog_Bites == "Yorkie / Chihuahua Mix"] <- "Yorkshire Terrier Mix"
 
 Dog_Bites[Dog_Bites == "Yorky-Poodle"|
             Dog_Bites == "Poodle Min/ Yorkshire Ter"|
@@ -215,6 +216,7 @@ Dog_Bites[Dog_Bites == "Yorky-Poodle"|
 Dog_Bites[Dog_Bites == "Collie, Border"] <- "Border Collie"
 
 #####Lab#####
+Dog_Bites[Dog_Bites == "Labrador"]<- "Labrador Retriever"
 Dog_Bites[Dog_Bites == "Labrador Retriever Crossbreed"|
             Dog_Bites == "LAB/COLLIE X"|
             Dog_Bites == "LABRADOR RETR/PIT BULL X"|
@@ -229,7 +231,20 @@ Dog_Bites[Dog_Bites == "Labrador Retriever Crossbreed"|
             Dog_Bites == "Retriever/Lab X"|
             Dog_Bites == "Labrador/Pitbull"|
             Dog_Bites == "Labrador / Chow Chow Mix"|
-            Dog_Bites == "Lab Retriever/Germ Shep"] <- "Lab Mix"
+            Dog_Bites == "Lab Retriever/Germ Shep"|
+            Dog_Bites == "Labrador/Pit Bull X"|
+            Dog_Bites == "Labrador/ Pit Bull"|
+            Dog_Bites == "Labrador Retr/Pit Bull X"|
+            Dog_Bites == "Labrador Ret / American Eskimo Mix"|
+            Dog_Bites == "Labrador / Pit Bull"|
+            Dog_Bites == "Lab/Rat Terrier X"|
+            Dog_Bites == "Lab/Pit Bull X"|
+            Dog_Bites == "Lab/Coo Hound"|
+            Dog_Bites == "Lab/Collie X"|
+            Dog_Bites == "Lab/Chow Chow X"|
+            Dog_Bites == "Lab/ Pitbull Mix"|
+            Dog_Bites == "Lab. Ret./Hound Mix"|
+            Dog_Bites == "Lab- X"]<- "Lab Mix"
 
 Dog_Bites[Dog_Bites == "LHASA APSO/MALTESE"|Dog_Bites=="MALTESE X"]<-"Maltese Mix"  
 Dog_Bites[Dog_Bites == "Schnauzer, Standard"] <- "Standard Schnauzer"  
@@ -264,10 +279,27 @@ Dog_Bites[Dog_Bites == "American Bull Dog"] <- "American Bulldog"
 Dog_Bites[Dog_Bites == "Sheperd"] <- "Shepherd"
 #Welsh Corgi, Pembroke
 #Boxer X W/ Pit Bull
-Dog_Bites == "BORDER COLLIE/JACK RUSSELL"|
-  Dog_Bites == "Beagle/Jack Russell"| 
-  Dog_Bites == "Beagle/Jack Russ"|
-  Dog_Bites == "Beagle/Jack Russell X"|
+#Dog_Bites == "BORDER COLLIE/JACK RUSSELL"|
+ # Dog_Bites == "Beagle/Jack Russell"| 
+  #Dog_Bites == "Beagle/Jack Russ"|
+  #Dog_Bites == "Beagle/Jack Russell X"|
+######Goldens#####
+Dog_Bites[Dog_Bites == "Mini Golden Doddle"|
+            Dog_Bites == "Golden/Doodle"|
+            Dog_Bites == "Golden Doddle"|
+            Dog_Bites == "Golden Poodle"]<-"Golden Doodle"
+Dog_Bites[Dog_Bites == "Golden Retriver Mix"|
+            Dog_Bites == "Golden Retriever/ Rottweiler"|
+            Dog_Bites == "Golden Retreiver X"|
+            Dog_Bites == "Golden Retr/Lab X"|
+            Dog_Bites == "Golden Labrador Mix"]<- "Golden Retriever Mix"
+Dog_Bites[Dog_Bites == "Aust Kelpie/Am Pit Bull X"]<-"Australian Kelpie Mix"
+#####Maltese#####
+Dog_Bites[Dog_Bites == "Maltese X"|
+            Dog_Bites == "Maltese Poodle"|
+            Dog_Bites == "Maltese Poodle Mix"]<-"Maltese Mix"
+Dog_Bites[Dog_Bites == "Maltese/Yorkshire Terrier"|
+            Dog_Bites == "Maltese/Yorkie"]<-"Morkie"
 #Write to CSV
 write.csv(Dog_Bites,'bites4.csv', 
           row.names = TRUE,
