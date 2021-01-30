@@ -935,7 +935,7 @@
 934,May,28,2016,German Shepherd,2,M,FALSE,Bronx,10469
 935,May,27,2016,Boxer,2,M,FALSE,Bronx,10472
 936,June,01,2016,Unknown,NA,U,FALSE,Bronx,10456
-937,June,02,2016,Shih Tzu/ Poodle,2,M,FALSE,Bronx,10472
+937,June,02,2016,Shih Tzu Mix,2,M,FALSE,Bronx,10472
 938,June,06,2016,Unknown,5,M,FALSE,Bronx,10459
 939,June,05,2016,Shih Tzu,6,F,FALSE,Bronx,10469
 940,June,04,2016,Chihuahua,1,M,FALSE,Bronx,10453
@@ -1006,7 +1006,7 @@
 1005,July,12,2016,NA,NA,U,FALSE,Bronx,10468
 1006,July,18,2016,Poodle,4,M,FALSE,Bronx,10457
 1007,July,18,2016,American Pitbull Terrier,NA,M,FALSE,Bronx,NA
-1008,July,19,2016,Shih Tzu/ Maltese,2,F,FALSE,Bronx,10467
+1008,July,19,2016,Shih Tzu Mix,2,F,FALSE,Bronx,10467
 1009,July,19,2016,American Pitbull Terrier,1,F,TRUE,Bronx,10460
 1010,July,20,2016,Chihuahua Mix,1,M,FALSE,Bronx,10458
 1011,July,21,2016,Cocker Spaniel Mix,10,M,TRUE,Bronx,10464
@@ -1033,7 +1033,7 @@
 1032,August,01,2016,Yorkshire Terrier,2,F,FALSE,Bronx,10459
 1033,July,28,2016,Maltese,3,M,TRUE,Bronx,10459
 1034,August,03,2016,American Pitbull Terrier,NA,U,FALSE,Bronx,10456
-1035,August,03,2016,Shih Tzu/ Poodle,10,M,TRUE,Bronx,10467
+1035,August,03,2016,Shih Tzu Mix,10,M,TRUE,Bronx,10467
 1036,August,03,2016,American Pitbull Terrier,NA,U,FALSE,Bronx,10452
 1037,August,03,2016,NA,NA,U,FALSE,Bronx,NA
 1038,August,04,2016,Maltese,NA,U,FALSE,Bronx,10457
@@ -1100,7 +1100,7 @@
 1099,September,10,2016,Cocker Spaniel,4,M,FALSE,Bronx,10456
 1100,September,09,2016,Yorkshire Terrier,7,M,TRUE,Bronx,10451
 1101,September,12,2016,Newfoundland,5,F,FALSE,Bronx,10465
-1102,September,12,2016,Shih Tzu/ Chihuahua Mix,6,M,TRUE,Bronx,10474
+1102,September,12,2016,Shih Tzu Mix,6,M,TRUE,Bronx,10474
 1103,September,12,2016,American Pitbull Terrier,NA,U,FALSE,Bronx,NA
 1104,September,14,2016,Cocker Spaniel,NA,U,FALSE,Bronx,NA
 1105,August,14,2016,NA,NA,U,FALSE,Bronx,10465
@@ -1272,7 +1272,7 @@
 1271,January,04,2016,Yorkshire Terrier,0.417,F,FALSE,Manhattan,10029
 1272,January,05,2016,Pitbull/ Lab Mix,0.333,F,FALSE,Manhattan,10027
 1273,January,08,2016,German Shepherd,NA,U,FALSE,Manhattan,10013
-1274,January,02,2016,Shih Tzu/ Maltese,5,M,FALSE,Manhattan,10029
+1274,January,02,2016,Shih Tzu Mix,5,M,FALSE,Manhattan,10029
 1275,January,07,2016,Unknown,8,F,TRUE,Manhattan,NA
 1276,January,10,2016,NA,NA,U,FALSE,Manhattan,NA
 1277,January,11,2016,Chihuahua,2,M,FALSE,Manhattan,10065
@@ -1541,7 +1541,7 @@
 1540,May,31,2016,American Pitbull Terrier,NA,U,FALSE,Manhattan,10009
 1541,May,21,2016,Rhodesian Ridgeback/Shepherd X,NA,U,FALSE,Manhattan,NA
 1542,June,02,2016,American Pitbull Terrier,NA,U,FALSE,Manhattan,10002
-1543,June,04,2016,Shih Tzu/ Pomeraninan,NA,F,FALSE,Manhattan,10016
+1543,June,04,2016,Shih Tzu Mix,NA,F,FALSE,Manhattan,10016
 1544,June,04,2016,Shih Tzu,3,M,TRUE,Manhattan,10039
 1545,June,06,2016,Yorkshire Terrier,NA,U,FALSE,Manhattan,10035
 1546,June,08,2016,American Pitbull Terrier,4,F,FALSE,Manhattan,10029
@@ -1621,7 +1621,7 @@
 1620,July,27,2016,Chihuahua Mix,4,M,FALSE,Manhattan,10075
 1621,July,23,2016,American Pitbull Terrier Mix,7,M,TRUE,Manhattan,10025
 1622,July,22,2016,American Pitbull Terrier Mix,NA,U,FALSE,Manhattan,10001
-1623,July,21,2016,Shih Tzu/ Yorkie,6,M,FALSE,Manhattan,10029
+1623,July,21,2016,Shih Tzu Mix,6,M,FALSE,Manhattan,10029
 1624,July,03,2016,American Pitbull Terrier,NA,U,FALSE,Manhattan,10031
 1625,July,27,2016,NA,NA,U,FALSE,Manhattan,10012
 1626,July,27,2016,Doberman Pinscher,8,M,FALSE,Manhattan,NA
@@ -2141,7 +2141,7 @@
 2140,February,21,2016,American Pitbull Terrier,1,M,FALSE,Queens,11101
 2141,February,21,2016,American Pitbull Terrier,NA,U,FALSE,Queens,11105
 2142,February,19,2016,Yorkshire Terrier,3,M,TRUE,Queens,11422
-2143,February,21,2016,Shih Tzu/ Lhasa Apso,8,F,FALSE,Queens,11101
+2143,February,21,2016,Shih Tzu Mix,8,F,FALSE,Queens,11101
 2144,February,10,2016,Poodle,NA,U,FALSE,Queens,11372
 2145,February,22,2016,American Pitbull Terrier,NA,U,FALSE,Queens,11105
 2146,February,11,2016,American Pitbull Terrier,NA,U,FALSE,Queens,11691
@@ -2321,7 +2321,7 @@
 2320,May,05,2016,NA,NA,U,FALSE,Queens,NA
 2321,May,05,2016,Pit Bull/Labrador,NA,M,FALSE,Queens,11434
 2322,April,20,2016,American Pitbull Terrier,5,F,TRUE,Queens,11361
-2323,April,29,2016,Shih Tzu/Poodle,8,M,TRUE,Queens,11358
+2323,April,29,2016,Shih Tzu Mix,8,M,TRUE,Queens,11358
 2324,April,30,2016,Chihuahua,1,M,TRUE,Queens,11105
 2325,May,07,2016,Schnauzer, Giant,4,M,TRUE,Queens,11369
 2326,April,27,2016,Labrador Retriever,NA,U,FALSE,Queens,NA
@@ -2337,7 +2337,7 @@
 2336,May,14,2016,Golden Retriever,NA,M,TRUE,Queens,11378
 2337,May,14,2016,Maltese,2,M,TRUE,Queens,11365
 2338,May,15,2016,German Shepherd,NA,U,FALSE,Queens,11373
-2339,May,14,2016,Shih Tzu/Poodle,NA,M,FALSE,Queens,NA
+2339,May,14,2016,Shih Tzu Mix,NA,M,FALSE,Queens,NA
 2340,May,16,2016,German Shepherd,7,M,FALSE,Queens,11434
 2341,May,12,2016,Yorkshire Terrier,13,M,TRUE,Queens,11356
 2342,May,09,2016,American Pitbull Terrier,5,M,TRUE,Queens,11372
@@ -2391,7 +2391,7 @@
 2390,June,01,2016,American Pitbull Terrier,NA,U,FALSE,Queens,11367
 2391,May,29,2016,American Pitbull Terrier,10,M,FALSE,Queens,11691
 2392,May,24,2016,German Shepherd Mix,13,M,TRUE,Queens,11360
-2393,May,29,2016,Shih Tzu/Mix,13,M,TRUE,Queens,NA
+2393,May,29,2016,Shih Tzu Mix,13,M,TRUE,Queens,NA
 2394,June,02,2016,American Pitbull Terrier,2,M,FALSE,Queens,11362
 2395,June,05,2016,American Pitbull Terrier,2,M,FALSE,Queens,11412
 2396,June,05,2016,American Pitbull Terrier,NA,M,FALSE,Queens,11412
@@ -2594,7 +2594,7 @@
 2593,August,23,2016,American Pitbull Terrier,4,F,TRUE,Queens,11418
 2594,August,01,2016,American Pitbull Terrier Mix,5,M,TRUE,Queens,11368
 2595,August,26,2016,German Shepherd,2,F,FALSE,Queens,11377
-2596,August,22,2016,Shih Tzu X/Poodle,6,M,TRUE,Queens,11102
+2596,August,22,2016,Shih Tzu Mix,6,M,TRUE,Queens,11102
 2597,August,27,2016,Chihuahua,NA,U,FALSE,Queens,11375
 2598,August,28,2016,Jack Russ / Shih Tzu,4,F,TRUE,Queens,11385
 2599,August,28,2016,Maltese / Poodle Mix,1,M,FALSE,Queens,11378
@@ -2803,7 +2803,7 @@
 2802,December,05,2016,NA,NA,U,FALSE,Queens,NA
 2803,November,22,2016,NA,NA,U,FALSE,Queens,11373
 2804,December,09,2016,American Pitbull Terrier,1,M,FALSE,Queens,11692
-2805,December,10,2016,Shih Tzu / Bichon Frise Mix,5,M,TRUE,Queens,11102
+2805,December,10,2016,Shih Tzu Mix,5,M,TRUE,Queens,11102
 2806,December,10,2016,American Pitbull Terrier,10,F,TRUE,Queens,11106
 2807,December,12,2016,American Pitbull Terrier Mix,4,F,TRUE,Queens,11420
 2808,November,02,2016,NA,NA,U,FALSE,Queens,11364

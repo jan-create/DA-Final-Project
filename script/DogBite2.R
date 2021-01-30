@@ -270,7 +270,17 @@ Dog_Bites[Dog_Bites == "American Bully (Pit Bull)"|
 #GERMAN SHEPHERD/RIDGEBACK
 #STAFFORDSHIRE TERR
 #CHIHUAHUA/BOSTON TERR
-
+#####Shih Tzu#####
+Dog_Bites[Dog_Bites == "Shih Tzu/Poodle"|
+            Dog_Bites == "Shih Tzu/ Poodle"|
+            Dog_Bites == "Shih Tzu/Mix"|
+            Dog_Bites == "Shih Tzu/ Yorkie"|
+            Dog_Bites == "Shih Tzu/ Pomeraninan"|
+            Dog_Bites == "Shih Tzu/ Maltese"|
+            Dog_Bites == "Shih Tzu/ Lhasa Apso"|
+            Dog_Bites == "Shih Tzu/ Chihuahua Mix"|
+            Dog_Bites == "Shih Tzu X/Poodle"|
+            Dog_Bites == "Shih Tzu / Bichon Frise Mix"] <- "Shih Tzu Mix"
 #BORDER COLLIE/JACK RUSSELL
 #Chow Chow/Shepard X
 #American Eskimo / Husky Mix
